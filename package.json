@@ -5,7 +5,7 @@
     "description": "A one page app landing page HTML theme for Bootstrap.",
     "scripts": {
         "start": "node gulpfile.js",
-},
+}
     "keywords": [
         "css",
         "sass",
