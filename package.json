@@ -1,5 +1,5 @@
 "scripts": {
-    "start": "gulpfile.js"
+    "start": "js/new-age.js"
 }
 {
     "title": "New Age",
