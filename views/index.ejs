@@ -1,0 +1,80 @@
+<html>
+<head>
+	<script>		
+		function addToList()
+		{
+			var ingredientList = document.getElementById("ingreList");
+			var outp = document.getElementById('ingreInput').value;
+			
+			if(outp.length > 0)
+			{
+				var text = document.createTextNode(outp);
+				ingredientList.appendChild(text);
+				
+				//	make a check box with the ingredient
+				var check = document.createElement('input');			
+				check.type = 'checkbox';
+				check.value = outp;
+				check.checked = true;
+				ingredientList.appendChild(check);
+
+				//	breakline after checkbox
+				var breakL = document.createElement('br');
+				ingredientList.appendChild(breakL);
+
+				// remove any unchecked ingredients
+				check.onclick = function() 
+				{
+					if(!check.checked)
+					{
+						ingredientList.removeChild(text);
+						ingredientList.removeChild(check);
+						ingredientList.removeChild(breakL);
+					}	
+				};			
+			}
+		}
+		
+		function readyQuery()
+		{
+			var ingredientList = document.getElementById("ingreList");
+			var query = document.getElementById('ingreString');
+			
+			query.value = "";
+			ingredientList.childNodes.forEach(
+				function(item){
+					if(item.type == 'checkbox')
+					{
+						item.value = item.value.trim();
+						query.value += item.value + ",";
+					}
+			});
+			query.value = query.value.substr(0,(query.value.length-1));
+			console.log(query);
+		}
+
+	</script>
+
+    <!-- 'title' is the data that is passed from the index.js during the response.render function call -->
+    <title><%= title %></title>
+
+</head>
+<body>
+	
+	<h1><%= title %></h1>
+	
+	<form action="/results" method="post">
+		I have : <input id="ingreInput" type="text" value=" ">
+		<input id="add" type="button" value="Add Ingredient" onclick="addToList();" />
+		<input id="ingreString" name="ingreQuery" type="hidden" value="" />
+		
+		<br>Ingredients I have : <br>
+		
+		<div id="ingreList"/> <br>
+		
+		<input type="submit" value="Search" onclick="readyQuery();" />
+		
+	</form>
+
+</body>
+</html>
