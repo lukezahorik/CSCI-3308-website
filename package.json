@@ -6,7 +6,6 @@
     "scripts": {
     "start": "index.php",
     "server": "nodemon index.php",
-    "postinstall": "gulp default"
 },
     "keywords": [
         "css",
