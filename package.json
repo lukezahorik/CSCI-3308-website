@@ -4,7 +4,7 @@
     "version": "5.0.0",
     "description": "A one page app landing page HTML theme for Bootstrap.",
     "scripts": {
-    "start": "node /js/new-age.js",
+    "start": "node gulpfile.js",
     "server": "nodemon index.php",
 },
     "keywords": [
