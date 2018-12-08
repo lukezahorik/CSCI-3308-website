@@ -4,7 +4,7 @@
     "version": "5.0.0",
     "description": "A one page app landing page HTML theme for Bootstrap.",
     "scripts": {
-    "start": "./gulpfile.js",
+    "start": "index.php",
     "server": "nodemon index.php",
     "postinstall": "gulp default"
 },
