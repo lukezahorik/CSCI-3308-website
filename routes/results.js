@@ -29,7 +29,7 @@ app.post('/', function (request, response) {
     var ingreStr = request.sanitize('ingreQuery').escape().trim();
     console.log(ingreStr);	
     var ingreArr = ingreStr.split(',');
-    var query = 'select * from tipsybase where ingredients ';
+    var query = 'select * from drinks where ingredients ';
     ingreArr.forEach(
 	function(item){ 
         	query += 'like \'%' + item + '%\' and ingredients ';
