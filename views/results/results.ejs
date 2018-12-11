@@ -1,0 +1,32 @@
+<%- include ../layouts/header.ejs %>
+
+<!--Using if-check to see if an error occurred and displaying appropriate message-->
+<% if (messages.error) { %>
+    <p style="color:red"><%- messages.error %></p>
+<% } %>
+<% if (messages.success) { %>
+    <p style="color:blue"><%- messages.success %></p>
+<% } %>
+
+<script type="text/javascript">
+    var err = <%- JSON.stringify(messages) %>;
+    console.log(err);
+</script>
+
+<table border="0" width='60%'>
+    <tr style='text-align:left; background-color:#CCC'>
+        <th>Drink Name</th>
+        <th>Ingredients</th>
+    </tr>
+
+    <% if (data) { %>
+        <% data.forEach(function(drink){ %>
+            <tr>
+                <td><a href = "https://www.geniuskitchen.com/recipe/ice-water-454788"><%= drink.name %></a></td>         <!-- =drink.link -->
+                <td><%= drink.ingredients %></td>
+            </tr>
+        <% }) %>
+    <% } %>
+</table>
+
+<%- include ../layouts/footer.ejs %>
