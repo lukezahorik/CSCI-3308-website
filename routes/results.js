@@ -26,8 +26,7 @@ app.get('/', function (request, response) {
 // Route to insert values. Notice that request method is POST here
 app.post('/', function (request, response) {
 	//	get query
-    var ingreStr = request.sanitize('ingreQuery').escape().trim();
-    print("chkp1");	
+    var ingreStr = request.sanitize('ingreQuery').escape().trim();	
     var ingreArr = ingreStr.split(',');
     var query = 'select * from drinks where ingredients ';
     ingreArr.forEach(
@@ -35,7 +34,6 @@ app.post('/', function (request, response) {
         	query += 'like \'%' + item + '%\' and ingredients ';
     });
     query = query.substr(0,(query.length-17));
-    print(query);
 
 	// display query results
     db.any(query)
