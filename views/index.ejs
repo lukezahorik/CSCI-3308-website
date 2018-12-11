@@ -60,21 +60,21 @@
 
 </head>
 <body>
-	
-	<h1><%= title %></h1>
-	
-	<form action="/results" method="post">
-		I have : <input id="ingreInput" type="text" value=" ">
-		<input id="add" type="button" value="Add Ingredient" onclick="addToList();" />
-		<input id="ingreString" name="ingreQuery" type="hidden" value="" />
+	<div align="center">
+	   <h1><%= title %></h1>
+	   <img src="/img/tipsybuffs-splash.png" alt="Tipsybuffs">
+	   <form action="/results" method="post">
+		  I have : <input id="ingreInput" type="text" value=" ">
+		  <input id="add" type="button" value="Add Ingredient" onclick="addToList();" />
+		  <input id="ingreString" name="ingreQuery" type="hidden" value="" />
 		
-		<br>Ingredients I have : <br>
+		  <br>Ingredients I have : <br>
 		
-		<div id="ingreList"/> <br>
+		  <div id="ingreList"/> <br>
 		
-		<input type="submit" value="Search" onclick="readyQuery();" />
+		  <input type="submit" value="Search" onclick="readyQuery();" />
 		
-	</form>
-
+	   </form>
+    </div>
 </body>
 </html>
