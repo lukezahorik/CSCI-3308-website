@@ -25,9 +25,9 @@ app.get('/', function (request, response) {
 
 // Route to insert values. Notice that request method is POST here
 app.post('/', function (request, response) {
-    var query = request.sanitize('ingreQuery').escape().trim();	
+    var query = String(request.sanitize('ingreQuery').escape().trim());	
    query = query.replace(/&#x27;/g,"'");
-   console.log(query);
+   
 
 	// display query results
     db.any(query)
@@ -41,7 +41,7 @@ app.post('/', function (request, response) {
           // display error message in case an error
           request.flash('error', err);
           response.render('results/results', {
-              title: 'Results',
+              title: query,
               data: ''
           })
       })
