@@ -22,7 +22,7 @@
     <% if (data) { %>
         <% data.forEach(function(drink){ %>
             <tr>
-                <td><a href = drink.link ><%= drink.name %></a></td>   
+                <td><a href = <%= drink.link %> ><%= drink.name %></a></td>   
                 <td><%= drink.ingredients %></td>
             </tr>
         <% }) %>
