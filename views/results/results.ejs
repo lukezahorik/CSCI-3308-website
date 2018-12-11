@@ -22,7 +22,7 @@
     <% if (data) { %>
         <% data.forEach(function(drink){ %>
             <tr>
-                <td><a href = "https://www.geniuskitchen.com/recipe/ice-water-454788"><%= drink.name %></a></td>         <!-- =drink.link -->
+                <td><a href = <%= drink.link %> ><%= drink.name %></a></td>   
                 <td><%= drink.ingredients %></td>
             </tr>
         <% }) %>

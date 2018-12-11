@@ -18,5 +18,4 @@ const dbConfig = {
 };
 
 var db = pgp(dbConfig);
-
 module.exports = db;

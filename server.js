@@ -1,5 +1,3 @@
-//	boilder plate shit to get server up
-
 var express = require('express');
 var app = express();
 
