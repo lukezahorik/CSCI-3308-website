@@ -46,10 +46,10 @@
 					if(item.type == 'checkbox')
 					{
 						item.value = item.value.trim();
-						query.value += 'like \'%' + item.value + '%\' and ingredients ';
+						query.value += 'like \'%' + item.value + '%\'::text and ingredients ';
 					}
 			});
-			query.value = query.value.substr(0,(query.value.length-17));
+			query.value = query.value.substr(0,(query.value.length-23));
 			console.log(query);
 		}
 
