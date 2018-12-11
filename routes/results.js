@@ -27,8 +27,8 @@ app.get('/', function (request, response) {
 app.post('/', function (request, response) {
 	console.log("Noooooooo")
 	//	get query
-    // -> var ingreStr = request.sanitize('ingreQuery').escape().trim();	
-    // -> var ingreArr = ingreStr.split(',');
+    var ingreStr = request.sanitize('ingreQuery').escape().trim();	
+    var ingreArr = ingreStr.split(',');
     var query = 'select * from drinks where ingredients ';
     /* -> ingreArr.forEach(
 	function(item){ 
