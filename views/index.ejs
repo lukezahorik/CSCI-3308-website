@@ -46,7 +46,7 @@
 					if(item.type == 'checkbox')
 					{
 						item.value = item.value.trim();
-						query.value += 'like \'%' + item.value + '%\'::text and ingredients ';
+						query.value += 'like \'%' + item.value + '%\'::text[] and ingredients ';
 					}
 			});
 			query.value = query.value.substr(0,(query.value.length-17));
