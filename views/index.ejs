@@ -40,8 +40,8 @@
 			var ingredientList = document.getElementById("ingreList");
 			var query = document.getElementById('ingreString');
 			
-			query.value = "";
-			ingredientList.childNodes.forEach(
+			query.value = "select * from drinks where ingredients like \'%orange%\'";
+			/*ingredientList.childNodes.forEach(
 				function(item){
 					if(item.type == 'checkbox')
 					{
@@ -49,7 +49,7 @@
 						query.value += item.value + ",";
 					}
 			});
-			query.value = query.value.substr(0,(query.value.length-1));
+			query.value = query.value.substr(0,(query.value.length-1));*/
 			console.log(query);
 		}
 
