@@ -7,7 +7,7 @@ app.set('view engine', 'ejs');
 
 var expressValidator = require('express-validator');
 app.use(expressValidator());
-app.use( express.static( "public" ) );
+app.use(express.static("public"));
 //app.use( express.static( "img" ) );
 
 var bodyParser = require('body-parser');
