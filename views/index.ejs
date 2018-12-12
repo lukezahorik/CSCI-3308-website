@@ -56,6 +56,44 @@
 			}
 		}
 
+		function testIndex()
+		{
+			var searchbar = document.getElementById('ingreInput');
+			var query = document.getElementById('ingreString');
+
+			// Add testing ingredients			
+			searchbar.value = "       ";
+			addToList();
+			searchbar.value = "water";
+			addToList();
+			searchbar.value = "   ice";
+			addToList();
+			
+			readyQuery();
+			if(query.value == "select * from drinks where ingredients[1][2] similar to \'%water%|%ice%\'");
+			{
+				console.log("Query building -> Passed(1/2)");
+			}
+
+			// Remove water and ice as ingredients
+			ingredientList.childNodes.forEach(
+					item.click();
+			});
+			readyQuery();
+			if(query.value == "select * from drinks where ingredients[1][2] similar to \'%water%|%ice%\'");
+			{
+				// Check cases
+				console.log("Unchecking boxes -> Passed");
+				console.log("Query building -> Passed(2/2)");
+			}
+		}
+		
+		// Unit testing mode
+		if(document.URL.includes("test"))
+		{
+			testIndex();
+		}
+
 	</script>
 
     <!-- 'title' is the data that is passed from the index.js during the response.render function call -->
@@ -93,10 +131,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#download">search</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#features">customize</a>
+              <a class="nav-link js-scroll-trigger" href="#download">Search for drinks!</a>
             </li>
           </ul>
         </div>

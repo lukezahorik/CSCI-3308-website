@@ -46,3 +46,7 @@ app.post('/', function (request, response) {
           })
       })
 });
+
+app.get('/test', function (request, response) {
+	// query something super specific and check for row count
+});

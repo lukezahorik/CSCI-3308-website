@@ -8,9 +8,6 @@ app.set('view engine', 'ejs');
 
 var expressValidator = require('express-validator');
 app.use(expressValidator());
-//app.use(express.static("public"));
-//app.use( express.static( "img" ) );
-//app.use(express.static(__dirname + '/public'));
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
