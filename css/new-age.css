@@ -442,6 +442,6 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 }
 
 .opaque {
-    background: white;
+    background-color: whitesmoke;
     opacity: 30%;
 }
