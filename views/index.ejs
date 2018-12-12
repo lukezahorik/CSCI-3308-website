@@ -108,7 +108,7 @@
         <div class="row h-100">
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
-              <h1 class="mb-5">Welcome to TipsyBuff</h1>
+              <h1 class="mb-5">Welcome to TipsyBuffs</h1>
             </div>
 
     </header>
@@ -130,8 +130,19 @@
     <section class="cta">
       <div class="cta-content">
         <div class="container">
-          <h2>Stop waiting.<br>Start searching.</h2>
-          <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
+	   <form action="/results" method="post">
+		  I have : <input id="ingreInput" type="text" value=" ">
+		  <input id="add" type="button" value="Add Ingredient" onclick="addToList();" />
+		  <input id="ingreString" name="ingreQuery" type="hidden" value="" />
+		
+		  <br>Ingredients I have : <br>
+		
+		  <div id="ingreList"/> <br>
+		
+		  <input type="submit" value="Search" onclick="readyQuery();" />
+		
+	   </form>
+    </div>
         </div>
       </div>
       <div class="overlay"></div>
