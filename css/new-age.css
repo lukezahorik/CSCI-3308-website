@@ -206,6 +206,7 @@ header.masthead .device-container .screen img {
 section.download {
   position: relative;
   padding: 150px 0;
+  color: gray;
 }
 
 section.download h2 {
@@ -438,4 +439,9 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 .btn-xl {
   font-size: 11px;
   padding: 15px 45px;
+}
+
+.opaque {
+    background: white;
+    opacity: 30%;
 }
