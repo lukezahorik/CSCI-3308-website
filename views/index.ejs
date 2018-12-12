@@ -50,7 +50,7 @@
 			});
 			query.value = query.value.substr(0,(query.value.length-1))
 			query.value += '\'';
-			if( query.value <= 57)
+			if( query.value.length <= 57)
 			{
 				query.value = "select * from drinks";
 			}
