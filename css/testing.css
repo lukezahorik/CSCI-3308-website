@@ -1,16 +1,36 @@
-body,html {height:100%;overflow:hidden;}
-body {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: linear-gradient(to bottom, #6e529d 0%,#d97b93 100%);
-}
-div {
-  border: 1px solid rgba(255,255,255,.1);
-  width: 10em;
-  height: 10em;
-  transform: rotate(45deg);
-  margin: 2em;
-  float: left;
-  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%,rgba(0,0,0,0.05) 100%); 
-}
+html
+  height: 100%
+  background: radial-gradient(ellipse at bottom, #5091DD 0%, #030617 100%)
+
+$lineColor : #030617
+$step : 3
+$borderWeight: 1px
+
+@function borderShadow ($n) 
+  $value: '0px 0px #{$lineColor}'
+  @for $i from 0 through $n
+    $value: '#{$value} , 0px #{($step)*$i}px #{$lineColor}'
+  @return unquote($value)
+
+@function stripeShadow ($n) 
+  $value: '0px 0px #{$lineColor}'
+  @for $i from 0 through $n
+    $value: '#{$value} , #{($step)*$i}px 0px #{$lineColor}'
+
+  @return unquote($value)
+
+$border:  borderShadow(1000)
+$stripe:  stripeShadow(1000)
+
+#grid
+  width: 100%
+  height: $borderWeight
+  box-shadow: $border
+  
+  &:after
+    content: ""
+    position: absolute
+    width: $borderWeight
+    height: 100%
+    box-shadow: $stripe
+    
