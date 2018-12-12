@@ -39,17 +39,24 @@
 		{
 			var ingredientList = document.getElementById("ingreList");
 			var query = document.getElementById('ingreString');
-			query.value = "select * from drinks where ingredients[1][2] similar to \'";
-			ingredientList.childNodes.forEach(
-				function(item){
-					if(item.type == 'checkbox')
-					{
-						item.value = item.value.trim();
-						query.value += '%' + item.value + '%|';
-					}
-			});
-			query.value = query.value.substr(0,(query.value.length-1))
-			query.value += '\'';
+			if(ingredientList.childElementCount == 0)
+			{
+				query.value = "select * from drinks";
+			}
+			else
+			{
+				query.value = "select * from drinks where ingredients[1][2] similar to \'";
+				ingredientList.childNodes.forEach(
+					function(item){
+						if(item.type == 'checkbox')
+						{
+							item.value = item.value.trim();
+							query.value += '%' + item.value + '%|';
+						}
+				});
+				query.value = query.value.substr(0,(query.value.length-1))
+				query.value += '\'';
+			}
 		}
 
 	</script>
