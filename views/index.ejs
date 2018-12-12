@@ -48,7 +48,7 @@
 						query.value += '%' + item.value + '%|';
 					}
 			});
-			query.value = query.value.substr(0,(query.value.length-1))
+			query.value = query.value.substr(0,(query.value.length-1));
 			query.value += '\'';
 			if( query.value.length <= 57)
 			{
@@ -76,7 +76,7 @@
 			}
 
 			// Remove water and ice as ingredients
-			ingredientList.childNodes.forEach(
+			ingredientList.childNodes.forEach(function(item){
 					item.click();
 			});
 			readyQuery();
