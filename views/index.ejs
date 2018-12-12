@@ -87,13 +87,6 @@
 				console.log("Query building -> Passed(2/2)");
 			}
 		}
-		
-		// Unit testing mode
-		if(document.URL.includes("test"))
-		{
-			testIndex();
-		}
-
 	</script>
 
     <!-- 'title' is the data that is passed from the index.js during the response.render function call -->
@@ -208,5 +201,13 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/new-age.min.js"></script>
+	
+	<script>
+		// Unit testing mode
+		if(document.URL.includes("test"))
+		{
+			testIndex();
+		}
+	</script>
 
 </html>
