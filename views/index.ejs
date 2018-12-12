@@ -77,8 +77,12 @@
 			}
 
 			// Remove water and ice as ingredients
-			ingredientList.childNodes.forEach(function(item){
-					item.click();
+			ingredientList.childNodes.forEach(
+				function(item){
+					if(item.type == 'checkbox')
+					{
+						item.onClick();
+					}
 			});
 			readyQuery();
 			if(query.value == "select * from drinks where ingredients[1][2] similar to \'%water%|%ice%\'");
