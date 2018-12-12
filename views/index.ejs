@@ -39,13 +39,16 @@
 		{
 			var ingredientList = document.getElementById("ingreList");
 			var query = document.getElementById('ingreString');
-			query.value = "select * from drinks where ingredients[1][2] similar to \'";
+			query.value = "select * from drinks where ingredients::text similar to \'";
 			ingredientList.childNodes.forEach(
 				function(item){
 					if(item.type == 'checkbox')
 					{
 						item.value = item.value.trim();
-						query.value += '%' + item.value + '%|';
+						if(item.value != "")
+						{
+							query.value += '% ' + item.value + '%|';
+						}
 					}
 			});
 			query.value = query.value.substr(0,(query.value.length-1));
@@ -71,7 +74,7 @@
 			addToList();
 			
 			readyQuery();
-			if(query.value == "select * from drinks where ingredients[1][2] similar to \'%water%|%ice%\'");
+			if(query.value == "select * from drinks where ingredients::text similar to \'%water%|%ice%\'");
 			{
 				console.log("Query building -> Passed(1/2)");
 			}
@@ -85,7 +88,7 @@
 					}
 			});
 			readyQuery();
-			if(query.value == "select * from drinks where ingredients[1][2] similar to \'%water%|%ice%\'");
+			if(query.value == "select * from drinks where ingredients::text similar to \'% water%|% ice%\'");
 			{
 				// Check cases
 				console.log("Unchecking boxes -> Passed");
