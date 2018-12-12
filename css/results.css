@@ -5,3 +5,6 @@ body {
 a:link {
     color:gold;
 }
+tr {
+    outline: thin solid goldenrod;
+}
