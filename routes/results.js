@@ -48,5 +48,23 @@ app.post('/', function (request, response) {
 });
 
 app.get('/test', function (request, response) {
-	// query something super specific and check for row count
+   var query = "select * from drinks where ingredients::text similar to \' % Tabasco%|% celery%\'";	
+   query = query.replace(/&#x27;/g,"'");
+
+	// display query results
+    db.any(query)
+      .then(function (rows) {
+          response.render('results/results', {
+              title: 'Results',
+              data: rows
+          })
+      })
+      .catch(function (err) {
+          // display error message in case an error
+          request.flash('error', err);
+          response.render('results/results', {
+              title: query,
+              data: ''
+          })
+      })
 });

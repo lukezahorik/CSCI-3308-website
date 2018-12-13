@@ -65,6 +65,7 @@
 			var ingredientList = document.getElementById("ingreList");
 			var query = document.getElementById('ingreString');
 
+			console.log("Testing...");
 			// Add testing ingredients			
 			searchbar.value = "       ";
 			addToList();
@@ -74,7 +75,7 @@
 			addToList();
 			
 			readyQuery();
-			if(query.value == "select * from drinks where ingredients::text similar to \'%water%|%ice%\'");
+			if(query.value == "select * from drinks where ingredients::text similar to \'% water%|%ice%\'");
 			{
 				console.log("Query building -> Passed(1/2)");
 			}
@@ -185,7 +186,7 @@
 
     <footer>
       <div class="container">
-        <p>&copy; Your Website 2018. All Rights Reserved.</p>
+        <p>&copy; TeamE 2018. All Rights Reserved.</p>
         <ul class="list-inline">
           <li class="list-inline-item">
             <a href="#">Privacy</a>

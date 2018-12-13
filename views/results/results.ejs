@@ -1,4 +1,23 @@
-<%- include ../layouts/header.ejs %>
+<html>
+<head>
+   <title> <%= title %> </title>
+    <link rel="stylesheet" type="text/css" href="./css/results.css">
+	<script>
+		
+		function testResults()
+		{
+			var ingreTable =  document.getElementById('table');
+			console.log("Testing...");
+			if(infreTable.rows.length == 4)
+			{
+				console.log("Query Database -> Passed");
+			}
+		}
+	
+	</script>
+</head>
+<body>
+<h1><%= title %></h1>
 
 <!--Using if-check to see if an error occurred and displaying appropriate message-->
 <% if (messages.error) { %>
@@ -13,7 +32,7 @@
     console.log(err);
 </script>
 
-<table border="0" width='60%'>
+<table border="0" width='60%' id="table">
     <tr style='text-align:left; background-color:gray'>
         <th>Drink Name</th>
         <th>Ingredients</th>
@@ -28,5 +47,13 @@
         <% }) %>
     <% } %>
 </table>
+
+	<script>
+		// Unit testing mode
+		if(document.URL.includes("test"))
+		{
+			testResults();
+		}
+	</script>
 
 <%- include ../layouts/footer.ejs %>
